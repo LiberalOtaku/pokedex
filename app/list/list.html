@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <nav class="col-xs-4" id="sidebar">
+      <button class="btn btn-default">
+        Previous
+      </button>
+      <button class="btn btn-default">
+        Next
+      </button>
+      <ul id="notes">
+        <li ng-repeat="pokemon in vm.list track by $index">
+          <!-- <a class="note" ui-sref="list.details({ pokemonId: pokemon._id })"> -->
+          <a class="note">
+            <div class="note-title">{{ pokemon.name }}</div>
+            <div class="note-body"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- <main class="col-xs-8" ui-view></main> -->
+  </div>
+</div>
