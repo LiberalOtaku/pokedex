@@ -18,7 +18,7 @@
 
   configFunction.$inject = ['$urlRouterProvider'];
   function configFunction($urlRouterProvider) {
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/list/');
   }
 
   run.$inject = ['$rootScope', '$state'];

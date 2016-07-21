@@ -137,3 +137,16 @@ nav#sidebar button {
 nav#sidebar div#buttons div.col-xs-6 {
   padding: 0;
 }
+
+div#start {
+  height: calc(100vh - 110px);
+}
+
+div#start h2 {
+  text-align: center;
+  line-height: calc(100vh - 110px);
+}
+
+div#details {
+  text-align: center;
+}
