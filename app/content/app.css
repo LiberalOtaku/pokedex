@@ -144,7 +144,7 @@ div#start {
 
 div#start h2 {
   text-align: center;
-  line-height: calc(100vh - 110px);
+  line-height: calc(100vh - 220px);
 }
 
 div#details {
