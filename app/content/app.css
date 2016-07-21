@@ -129,3 +129,11 @@ span.login {
 ul#notes li, div#details {
   text-transform: capitalize;
 }
+
+nav#sidebar button {
+  width: 100%;
+}
+
+nav#sidebar div#buttons div.col-xs-6 {
+  padding: 0;
+}

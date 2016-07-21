@@ -27,11 +27,8 @@
               entry.name = res.data.name;
               newList.push(entry);
             });
-          // while (newList.length < length) {
-          //   continue;
-          // }
-          vm.list = newList;
         }
+        vm.list = newList;
       })
       .finally(() => vm.loading = false);
     }
