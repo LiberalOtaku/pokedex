@@ -11,7 +11,7 @@
       // Custom modules
       'pokedex.layout',
       'pokedex.list',
-      // 'pokedex.details',
+      'pokedex.details',
     ])
     .config(configFunction)
     .run(run);
