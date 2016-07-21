@@ -62,7 +62,7 @@ ul#notes {
   color: #999; }
   ul#notes li {
     border-top: 1px solid #ddd;
-    height: 100px;
+    height: auto;
     font-size: 90%;
     cursor: pointer;
     overflow: hidden; }
@@ -79,11 +79,11 @@ ul#notes {
       font-size: 120%;
       font-weight: 300; }
     ul#notes li .note-body {
-      height: 54px;
+      height: auto;
       overflow: hidden; }
     ul#notes li a.note {
       display: block;
-      height: 100px;
+      height: auto;
       padding: 1em;
       text-decoration: none; }
     ul#notes li a.note:hover {
@@ -124,4 +124,8 @@ span.login {
   display: inline-block;
   width: 300px;
   margin-top: 1rem;
+}
+
+ul#notes li, div#details {
+  text-transform: capitalize;
 }

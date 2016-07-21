@@ -1,3 +1,5 @@
+<div us-spinner="{ top: '10%' }" spinner-on="vm.loading"></div>
+
 <div class="container">
   <div class="row">
     <nav class="col-xs-4" id="sidebar">
@@ -8,11 +10,11 @@
         Next
       </button>
       <ul id="notes">
-        <li ng-repeat="pokemon in vm.list track by $index">
+        <li ng-repeat="pokemon in vm.list | orderBy: 'id' track by $index">
           <!-- <a class="note" ui-sref="list.details({ pokemonId: pokemon._id })"> -->
           <a class="note">
-            <div class="note-title">{{ pokemon.name }}</div>
-            <div class="note-body"></div>
+            <div class="note-title">#{{ pokemon.id }} {{ pokemon.name }}</div>
+            <div class="note-body"><img src="{{ pokemon.sprite_url }}" alt="" /></div>
           </a>
         </li>
       </ul>

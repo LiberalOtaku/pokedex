@@ -3,8 +3,8 @@
     .module('pokedex.list')
     .controller('ListController', ListController);
 
-  ListController.$inject = ['List'];
-  function ListController(List) {
+  ListController.$inject = ['$http', 'List'];
+  function ListController($http, List) {
     const vm = this;
     vm.list = [];
     vm.refresh = refresh;
@@ -14,7 +14,26 @@
     /////////////////////
 
     function refresh() {
-      List.get().$promise.then(list => vm.list = list.results);
+      vm.loading = true;
+      List.get().$promise.then(list => {
+        var newList = [];
+        var length = list.results.length;
+        for (var i = 0; i < length; i++) {
+          $http.get(list.results[i].url)
+            .then(res => {
+              var entry = {};
+              entry.sprite_url = res.data.sprites.front_default;
+              entry.id = res.data.id;
+              entry.name = res.data.name;
+              newList.push(entry);
+            });
+          // while (newList.length < length) {
+          //   continue;
+          // }
+          vm.list = newList;
+        }
+      })
+      .finally(() => vm.loading = false);
     }
   }
 }
