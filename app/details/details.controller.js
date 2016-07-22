@@ -5,8 +5,8 @@
     .module('pokedex.details')
     .controller('DetailsController', DetailsController);
 
-  DetailsController.$inject = ['$http', '$state', 'DETAILS_URL'];
-  function DetailsController($http, $state, DETAILS_URL) {
+  DetailsController.$inject = ['$state', 'Details'];
+  function DetailsController($state, Details) {
     const vm = this;
 
     vm.pokemon = {};
@@ -19,10 +19,8 @@
     function getDetails() {
       if ($state.params.id) {
         vm.loading = true;
-        $http.get(`${DETAILS_URL}${$state.params.id}`)
-          .then(res => {
-            vm.pokemon = res.data;
-          })
+        Details.findById($state.params.id).get().$promise
+          .then(res => vm.pokemon = res)
           .finally(() => vm.loading = false);
       }
       else {
