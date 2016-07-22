@@ -3,10 +3,20 @@
     .module('pokedex.list')
     .factory('List', List);
 
-  List.$inject = ['$resource', 'FORMS_URL'];
-  function List($resource, FORMS_URL) {
-    return $resource(FORMS_URL, null, {
-      update: { method: 'PUT' },
-    });
+  List.$inject = ['$resource'];
+  function List($resource) {
+    const service = {
+      getListByUrl: getListByUrl,
+    };
+
+    return service;
+
+    ///////////////
+
+    function getListByUrl(url) {
+      return $resource(url, null, {
+        update: { method: 'PUT' },
+      });
+    }
   }
 }
