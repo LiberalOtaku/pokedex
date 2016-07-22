@@ -1,9 +1,15 @@
-<div us-spinner="{ top: '50%', left: '50%' }" spinner-on="vm.loading"></div>
+<div us-spinner="{ top: '55%', left: '50%' }" spinner-on="vm.loading"></div>
 
-<div id="start" ng-show="!vm.pokemon.id">
-  <h2>Choose a Pokémon to view.</h2>
+<div id="start" ng-hide="vm.pokemon.id">
+  <h2 ng-hide="vm.loading">Choose a Pokémon to view.</h2>
 </div>
 
 <div id="details" ng-show="vm.pokemon.id">
   <h1><span ng-bind="vm.pokemon.name"></span></h1>
+
+  <h1><img src="{{ vm.pokemon.sprites.front_default }}" /></h1>
+
+  <p class="type" ng-repeat="types in vm.pokemon.types">
+    <span ng-bind="types.type.name"></span>
+  </p>
 </div>

@@ -150,3 +150,11 @@ div#start h2 {
 div#details {
   text-align: center;
 }
+
+p.type {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 1em 0 1em 0;
+  margin: 1em 0 1em 0;
+  width: auto;
+}
