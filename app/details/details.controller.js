@@ -10,6 +10,7 @@
     const vm = this;
 
     vm.pokemon = {};
+    vm.species = {};
     vm.getDetails = getDetails;
 
     vm.getDetails();
@@ -20,7 +21,11 @@
       if ($state.params.id) {
         vm.loading = true;
         Details.findById($state.params.id).get().$promise
-          .then(res => vm.pokemon = res)
+          .then(res => {
+            vm.pokemon = res;
+            Details.getByUrl(res.species.url).get().$promise
+            .then(res => vm.species = res);
+          })
           .finally(() => vm.loading = false);
       }
       else {

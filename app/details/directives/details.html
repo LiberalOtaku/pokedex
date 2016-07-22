@@ -12,4 +12,54 @@
   <p class="type" ng-repeat="types in vm.pokemon.types">
     <span ng-bind="types.type.name"></span>
   </p>
+
+  <h3>Base Stats</h3>
+  <dl id="stats">
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">HP</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[5].base_stat"></dd>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">Attack</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[4].base_stat"></dd>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">Defense</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[3].base_stat"></dd>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">Special Attack</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[2].base_stat"></dd>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">Special Defense</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[1].base_stat"></dd>
+      </div>
+    </li>
+    <li>
+      <div class="row">
+        <dt class="col-xs-6">Speed</dt>
+        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[0].base_stat"></dd>
+      </div>
+    </li>
+  </dl>
+
+  <h3>Descriptions</h3>
+  <dl id="descriptions">
+    <li ng-repeat="entry in vm.species.flavor_text_entries">
+      <div class="row" ng-show="entry.language.name === 'en'">
+        <dt class="col-xs-4" ng-bind="entry.version.name"></dt>
+        <dd class="col-xs-8" ng-bind="entry.flavor_text"></dd>
+      </div>
+    </li>
+  </dl>
 </div>

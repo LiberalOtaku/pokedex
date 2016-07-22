@@ -126,7 +126,10 @@ span.login {
   margin-top: 1rem;
 }
 
-ul#notes li, div#details {
+ul#notes li,
+div#details h1,
+dl#descriptions dt,
+p.type {
   text-transform: capitalize;
 }
 
@@ -157,4 +160,13 @@ p.type {
   padding: 1em 0 1em 0;
   margin: 1em 0 1em 0;
   width: auto;
+}
+
+dl {
+  list-style: none;
+  padding-bottom: 1.5em;
+}
+
+dl#descriptions dt, dl#descriptions dd {
+  padding-top: 0.5em;
 }
