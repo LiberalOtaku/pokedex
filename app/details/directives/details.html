@@ -15,40 +15,10 @@
 
   <h3>Base Stats</h3>
   <dl id="stats">
-    <li>
+    <li ng-repeat="stat in vm.pokemon.stats | orderBy: '-'">
       <div class="row">
-        <dt class="col-xs-6">HP</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[5].base_stat"></dd>
-      </div>
-    </li>
-    <li>
-      <div class="row">
-        <dt class="col-xs-6">Attack</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[4].base_stat"></dd>
-      </div>
-    </li>
-    <li>
-      <div class="row">
-        <dt class="col-xs-6">Defense</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[3].base_stat"></dd>
-      </div>
-    </li>
-    <li>
-      <div class="row">
-        <dt class="col-xs-6">Special Attack</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[2].base_stat"></dd>
-      </div>
-    </li>
-    <li>
-      <div class="row">
-        <dt class="col-xs-6">Special Defense</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[1].base_stat"></dd>
-      </div>
-    </li>
-    <li>
-      <div class="row">
-        <dt class="col-xs-6">Speed</dt>
-        <dd class="col-xs-6" ng-bind="vm.pokemon.stats[0].base_stat"></dd>
+        <dt class="col-xs-6">{{ stat.stat.name === "hp" ? "HP" : stat.stat.name }}</dt>
+        <dd class="col-xs-6" ng-bind="stat.base_stat"></dd>
       </div>
     </li>
   </dl>

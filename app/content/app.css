@@ -128,7 +128,7 @@ span.login {
 
 ul#notes li,
 div#details h1,
-dl#descriptions dt,
+dl dt,
 p.type {
   text-transform: capitalize;
 }
